@@ -4,18 +4,19 @@ Library  String
 Suite Setup  เปิดหน้าค้นหา
 Suite Teardown  Close Browser
 Test Teardown  กลับหน้าค้นหา
+Test Template  Template ค้นหา google
 *** Variables ***
 
 *** Test Cases ***
-ค้นหาข้อมูลของ pub ลาดพร้าว
-    [Tags]  testing
-    ทำการค้นหาคำว่า  pub ลาดพร้าว
+TC001   pub ลาดพร้าว
+TC002   iservice
+*** Keywords ***
+Template ค้นหา google
+    [Arguments]  ${keyword}
+    ทำการค้นหาคำว่า  keyword
     ต้องเจอผลลัพธ์
 
-ค้นหาข้อมูลของ iservice
-    ทำการค้นหาคำว่า "iservice"
-    ต้องเจอผลลัพธ์ของ iservice
-*** Keywords ***
+
 กลับหน้าค้นหา
     Go to  https://google.co.th
 
